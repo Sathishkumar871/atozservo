@@ -1,6 +1,70 @@
-body {
-  background-color: #1e1e1e; /* Dark gray */
+/* Reset and base styles */
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #1e1e1e, #2c2c2c); /* Dark professional background */
   height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+/* Container setup */
+.container {
+  text-align: center;
+}
+
+/* Logo */
+.logo {
+  font-size: 36px;
+  font-weight: bold;
+  color: #00f0ff;
+  margin-bottom: 10px;
+}
+
+/* Welcome text */
+.welcome {
+  font-size: 24px;
+  margin-bottom: 30px;
+}
+
+/* Buttons layout */
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Button style */
+.btn {
+  padding: 14px 40px;
+  font-size: 16px;
+  border-radius: 12px;
+  text-decoration: none;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+}
+
+/* Individual button colors */
+.login-btn {
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+}
+
+.create-btn {
+  background: linear-gradient(to right, #43e97b, #38f9d7);
+}
+
+/* Hover effect */
+.btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
 }
