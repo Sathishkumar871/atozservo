@@ -4,8 +4,7 @@
   <meta charset="UTF-8" />
   <title>AtoZ Servos</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-   <link rel="icon" type="round-logo" href="logo.jpg" />
-
+  <link rel="icon" type="image/png" href="logo.jpg" />
 
   <style>
     * {
@@ -19,7 +18,7 @@
       color: #333;
     }
 
-    header {
+    .main-header {
       background: linear-gradient(to bottom, #1c2833, #2c3e50);
       color: white;
       padding: 20px 40px;
@@ -29,7 +28,7 @@
       box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
     }
 
-    header h1 {
+    .main-header h1 {
       margin: 0;
       font-size: 2.5rem;
     }
@@ -46,15 +45,14 @@
       line-height: 1.6;
     }
 
-    /* 🎯 Responsive Adjustments */
     @media (max-width: 768px) {
-      header {
+      .main-header {
         padding: 16px 20px;
         border-bottom-left-radius: 20px;
         border-bottom-right-radius: 20px;
       }
 
-      header h1 {
+      .main-header h1 {
         font-size: 1.8rem;
       }
 
@@ -68,13 +66,13 @@
     }
 
     @media (max-width: 480px) {
-      header {
+      .main-header {
         padding: 12px 16px;
         border-bottom-left-radius: 16px;
         border-bottom-right-radius: 16px;
       }
 
-      header h1 {
+      .main-header h1 {
         font-size: 1.5rem;
       }
 
@@ -85,12 +83,6 @@
   </style>
 </head>
 <body>
-  <header>
-    <h1>Welcome to AtoZ Servos</h1>
-  </header>
-
-  <div class="content">
-    <p>Your go-to hub for smart servo-powered solutions — now beautifully responsive across all screens!>
-  </div>
+  <div id="root"></div>
 </body>
 </html>
