@@ -14,12 +14,14 @@ import socket from './socket';
 import L from 'leaflet';
 import markerIcon from 'leaflet/dist/images/marker-icon.png';
 import markerShadow from 'leaflet/dist/images/marker-shadow.png';
+import { ServiceProvider } from './contexts/ServiceContext';
+
 delete (L.Icon.Default.prototype as any)._getIconUrl;
 L.Icon.Default.mergeOptions({
   iconUrl: markerIcon,
   shadowUrl: markerShadow,
 });
-import { ServiceProvider } from './contexts/ServiceContext';
+
 function App() {
   useEffect(() => {
     socket.on("connect", () => {
@@ -33,6 +35,7 @@ function App() {
       socket.disconnect();
     };
   }, []);
+
   return (
     <ServiceProvider>
       <Router>
@@ -43,7 +46,16 @@ function App() {
           <Route path="/chat" element={<Chat />} />
           <Route path="/chatroom" element={<ChatRoom />} />
           <Route path="/services/:id" element={<ServiceDetails />} />
-          <Route path="/edit-profile" element={<EditProfile/>} />
+          <Route
+            path="/edit-profile"
+            element={
+              <EditProfile
+                user={{ email: "sample@example.com" }}
+                onClose={() => console.log("Close EditProfile")}
+                onComplete={() => console.log("Profile completed")}
+              />
+            }
+          />
         </Routes>
       </Router>
       <ToastContainer

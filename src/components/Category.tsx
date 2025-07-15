@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState} from 'react';
+import type { ReactElement } from 'react';
 
 import axios from 'axios';
 import './Category.css';
@@ -22,7 +23,7 @@ interface Service {
 }
 
 
-const iconMap: Record<string, JSX.Element> = {
+const iconMap: Record<string, ReactElement> = {
   'Appliances': <MdOutlineKitchen size={28} />,
   'Furniture': <GiSofa size={28} />,
   'Electrical service': <MdElectricalServices size={28} />,

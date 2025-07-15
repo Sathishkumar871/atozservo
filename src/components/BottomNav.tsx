@@ -1,3 +1,5 @@
+
+
 import React from 'react';
 import { TbSmartHome } from 'react-icons/tb';
 import { MdOutlineExplore } from 'react-icons/md';
@@ -10,14 +12,12 @@ import './BottomNav.css';
 interface BottomNavProps {
   user: any;
   openLogin: () => void;
-  openProfile: () => void;
   openPost: () => void;
 }
 
 const BottomNav: React.FC<BottomNavProps> = ({
   user,
   openLogin,
-  openProfile,
   openPost,
 }) => {
   const navigate = useNavigate();

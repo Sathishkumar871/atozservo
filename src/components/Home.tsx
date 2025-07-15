@@ -17,10 +17,10 @@ const Home = () => {
   
 
 
-  // ✅ Added state for Notification panel open status
+  
   const [isPanelOpen, setIsPanelOpen] = useState(false);
 
-  // ✅ Auto-login check
+  
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (token) {
@@ -98,11 +98,10 @@ const Home = () => {
       )}
 
       <BottomNav
-        user={user}
-        openLogin={() => setShowLogin(true)}
-        openProfile={() => {}}
-        openPost={handlePostClick}
-      />
+    user={user}
+    openLogin={() => setShowLogin(true)}
+    openPost={handlePostClick}
+     />
     </>
   );
 };

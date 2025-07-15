@@ -2,10 +2,9 @@ import { useParams } from "react-router-dom";
 import { useServiceContext } from '../contexts/ServiceContext';
 
 export default function ServiceDetails() {
-  const { id } = useParams(); // id = "Plumber"
-  const { allServices } = useServiceContext();
+  const { id } = useParams();
+  const { allServices } = useServiceContext(); 
 
-  // Filter all persons who posted 'Plumber'
   const matchedServices = allServices.filter(service => service.name.toLowerCase() === id?.toLowerCase());
 
   if (matchedServices.length === 0) return <p>No providers found for {id}</p>;
