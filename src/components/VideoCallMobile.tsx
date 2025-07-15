@@ -105,9 +105,7 @@ const VideoCallMobile: React.FC = () => {
     setCallStarted(true);
   };
 
-  const declineCall = () => {
-    endCall();
-  };
+  
 
   const formatTime = (seconds: number) => {
     const mins = Math.floor(seconds / 60).toString().padStart(2, '0');

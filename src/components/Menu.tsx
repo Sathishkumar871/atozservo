@@ -20,7 +20,9 @@ const Menu: React.FC<MenuProps> = ({ user, setUser }) => {
   const [showLogin, setShowLogin] = useState(false);
   const [showPolicyPanel, setShowPolicyPanel] = useState(false);
   const [showEditProfile, setShowEditProfile] = useState(false);
-  const [selectedItem, setSelectedItem] = useState('');
+
+  // ✅ fixed — unused value removed
+  const [, setSelectedItem] = useState('');
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
@@ -71,7 +73,7 @@ const Menu: React.FC<MenuProps> = ({ user, setUser }) => {
                     className="icon-btn"
                     onClick={() => {
                       localStorage.removeItem("token");
-                      setUser(null); // ✅ Home lo clear avutundi
+                      setUser(null);
                       setSelectedItem('logout');
                       alert('Logged out');
                     }}
@@ -111,7 +113,7 @@ const Menu: React.FC<MenuProps> = ({ user, setUser }) => {
               <LoginPanel
                 onClose={() => setShowLogin(false)}
                 onLogin={(u) => {
-                  setUser(u); // ✅ Home lo update avutundi
+                  setUser(u);
                   setShowLogin(false);
                 }}
               />

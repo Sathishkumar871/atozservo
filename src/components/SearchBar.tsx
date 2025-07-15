@@ -1,7 +1,7 @@
 // SearchBar.tsx
 type SpeechRecognition = any;
 type SpeechRecognitionEvent = any;
-import React, { useState, useRef, useEffect } from 'react';
+import  { useState, useRef, useEffect } from 'react';
 import axios from 'axios';
 import Fuse from 'fuse.js';
 import './SearchBar.css';

@@ -1,4 +1,4 @@
-import React from "react";
+
 import { useNavigate } from "react-router-dom";
 import { FiSearch, FiPhone, FiMessageCircle, FiPlus } from "react-icons/fi";
 import "./Chat.css";

@@ -14,11 +14,8 @@ const Home = () => {
   const [showPostForm, setShowPostForm] = useState(false);
   const [showLogin, setShowLogin] = useState(false);
   const [user, setUser] = useState<any>(null);
-  
 
-
-  
-  const [isPanelOpen, setIsPanelOpen] = useState(false);
+  const [isPanelOpen] = useState(false);
 
   
   useEffect(() => {
