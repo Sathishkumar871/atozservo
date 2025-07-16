@@ -1,27 +1,30 @@
+// ✅ Import Core Modules
 const express = require('express');
 const dotenv = require('dotenv');
 const mongoose = require('mongoose');
 const cloudinary = require('cloudinary').v2;
-const path = require('path'); // 👉 Add path module
+const path = require('path');
+const cors = require('cors');
+
+// ✅ Import Routes
 const serviceRoutes = require('./routes/ServiceRoutes');
 const otpRoutes = require('./routes/otpRoutes');
 
+// ✅ Load .env
 dotenv.config();
 
+// ✅ Create App
 const app = express();
 
-// Middleware
+// ✅ Middleware
 app.use(express.json());
-
-// ✅ Allow CORS (dev only, Render lo not needed if same domain)
-const cors = require('cors');
-app.use(cors());
+app.use(cors()); // Dev only, same domain in production
 
 // ✅ API Routes
-app.use('/api', serviceRoutes);
+app.use('/api/services', serviceRoutes);
 app.use('/api/otp', otpRoutes);
 
-// ✅ Cloudinary Configuration
+// ✅ Cloudinary Config
 cloudinary.config({
   cloud_name: process.env.CLOUD_NAME,
   api_key: process.env.CLOUDINARY_API_KEY,
@@ -37,15 +40,15 @@ mongoose.connect(process.env.MONGODB_URI)
   .then(() => console.log('✅ MongoDB Connected'))
   .catch(err => console.error('❌ MongoDB connection error:', err));
 
-// ✅ Serve Frontend
-app.use(express.static(path.join(__dirname, 'frontend/dist')));
+// ✅ Serve Frontend (Vite build output)
+app.use(express.static(path.join(__dirname, '../frontend/dist')));
 
-// ✅ Any other route -> index.html (for React Router)
+// ✅ React Router fallback
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'frontend/dist', 'index.html'));
+  res.sendFile(path.join(__dirname, '../frontend/dist', 'index.html'));
 });
 
-// ✅ Server Start
+// ✅ Start Server
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`🚀 Server running on port ${PORT}`);
