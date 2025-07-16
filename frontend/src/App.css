@@ -1,0 +1,17 @@
+/* 🔹 Global resets and typography */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #fdfdfd;
+}
+
+/* 🔹 Optional: Base heading styles */
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
+/* 🔹 Link styling (if needed globally) */
+a {
+  text-decoration: none;
+  color: inherit;
+}
