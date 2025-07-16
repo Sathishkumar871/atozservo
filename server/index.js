@@ -2,7 +2,7 @@ const express = require('express');
 const dotenv = require('dotenv');
 const mongoose = require('mongoose');
 const cloudinary = require('cloudinary').v2;
-const serviceRoutes = require('./routes/serviceRoutes');
+const serviceRoutes = require('./routes/ServiceRoutes.js');
 const otpRoutes = require('./routes/otpRoutes');
  
 
